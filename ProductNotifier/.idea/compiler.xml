@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="docker-test-project" />
         <module name="core" />
         <module name="mockservice" />
         <module name="ProductMicroservice" />
@@ -18,6 +19,7 @@
       <module name="EmailNotificationService" options="-parameters" />
       <module name="ProductMicroservice" options="-parameters" />
       <module name="core" options="-parameters" />
+      <module name="docker-test-project" options="-parameters" />
       <module name="mockservice" options="-parameters" />
     </option>
   </component>

@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/EmailNotificationService/pom.xml" />
         <option value="$PROJECT_DIR$/core/pom.xml" />
         <option value="$PROJECT_DIR$/mockservice/pom.xml" />
+        <option value="$PROJECT_DIR$/docker-test-project/pom.xml" />
       </list>
     </option>
   </component>
