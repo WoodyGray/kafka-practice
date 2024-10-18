@@ -3,6 +3,7 @@ package by.woodygray.ws.productmicroservice.service;
 import by.woodygray.core.ProductCreatedEvent;
 import by.woodygray.ws.productmicroservice.service.dto.CreateProductDto;
 
+import org.apache.kafka.clients.producer.ProducerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -50,8 +51,19 @@ public class ProductServiceImpl implements ProductService{
 //
 //        LOGGER.info("Return: {}", productId);
 
+
+        ProducerRecord<String, ProductCreatedEvent> record = new ProducerRecord<>(
+                "product-sold-events-topic",
+                productId,
+                productCreatedEvent
+        );
+
+        record.headers().add("messageId", "UUID.randomUUID().toString()".getBytes());
+
+
+
         SendResult<String, ProductCreatedEvent> result =kafkaTemplate
-                         .send("product-sold-events-topic", productId, productCreatedEvent).get();
+                         .send(record).get();
 
 
         LOGGER.info("Topic: {}", result.getRecordMetadata().topic());

@@ -77,7 +77,7 @@ public class KafkaConfig {
         return TopicBuilder.name("product-sold-events-topic")
                 .partitions(3)
                 .replicas(3)
-                .configs(Map.of("min.insync.replicas", "2"))
+                .configs(Map.of("min.insync.replicas", "1"))
                 .build();
     }
 }
